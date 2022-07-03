@@ -12,6 +12,8 @@ export default function Home() {
       </Head>
       <StyledDiv>
         <h1>Test 1</h1>
+        <p>some text</p>
+        <button>a button</button>
       </StyledDiv>
     </div>
   );
