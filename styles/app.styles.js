@@ -4,8 +4,9 @@ export const colors = {
   white: '#fff',
   white2: '#fff5ff',
   black: '#000',
-  lightBlue: '#deeff9',
+  dimBlue: '#243447',
   blue: 'rgb(57, 128, 187)',
+  lightBlue: '#deeff9',
   green: 'green',
   lightGrey: 'rgba(0, 0, 0, 0.153);',
   pinkBgColor: '#fa709a',
@@ -39,6 +40,7 @@ export const size = {
   mobileXL: 630,
   tablet: 768,
   laptop: 1024,
+  laptopM: 1280,
   laptopL: 1440,
   desktop: 2560,
 };
@@ -49,6 +51,7 @@ export const device = {
   mobileL: `(min-width: ${size.mobileL}px)`,
   tablet: `(min-width: ${size.tablet}px)`,
   laptop: `(min-width: ${size.laptop}px)`,
+  laptopM: `(min-width: ${size.laptopM}px)`,
   laptopL: `(min-width: ${size.laptopL}px)`,
   desktop: `(min-width: ${size.desktop}px)`,
 };
@@ -81,7 +84,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   position: relative;
   min-height: 100vh;
-  background:  ${colors.clrLightBlueGradiant};
+  background:  ${colors.dimBlue};
 }
 
 a {
@@ -109,10 +112,10 @@ h2 {
   font-family: ${fonts.nunito};
 }
 
-.section-center {
-  width: 95%;
-  max-width: 1200px;
+/* .max-w-1300 {
+  width: 100%;
+  max-width: 1280px;
   margin: auto;
-}
+} */
 
 `;
