@@ -112,6 +112,16 @@ h2 {
   font-family: ${fonts.nunito};
 }
 
+.hoverAnimation {
+  padding: 5px;
+}
+.hoverAnimation:hover {
+  background: rgba(229, 229, 229, .3);
+  border-radius: 50%;
+}
+
+
+
 /* .max-w-1300 {
   width: 100%;
   max-width: 1280px;

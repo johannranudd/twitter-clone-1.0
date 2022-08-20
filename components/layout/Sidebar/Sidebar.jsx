@@ -1,10 +1,12 @@
 import { StyledDiv } from './sidebar.styles';
-import Image from 'next/image';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import SidebarLink from './Sidebar.jsx';
 
 const Sidebar = () => {
   return (
     <StyledDiv className='sidebar'>
-      <Image src='https://rb.gy/ogau5a' width={50} height={50} />
+      <AiOutlineTwitter className='logo hoverAnimation' />
+      <SidebarLink text='home' icon={AiOutlineTwitter} />
     </StyledDiv>
   );
 };
