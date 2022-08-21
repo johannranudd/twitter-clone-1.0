@@ -5,6 +5,7 @@ export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media ${device.laptopM} {
     align-items: flex-start;
   }
@@ -39,16 +40,17 @@ export const StyledDiv = styled.div`
       position: relative;
       height: 50px;
       width: 50px;
-      /* overflow: hidden; */
-      border: 1px solid red;
+      overflow: hidden;
       div {
+        position: absolute;
+        top: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        transition: 0.4s;
+        justify-content: space-around;
+        align-items: center;
         height: 100px;
         width: 50px;
-        border: 1px solid green;
+        transition: 0.4s;
         .link-icon {
           margin: 0;
         }

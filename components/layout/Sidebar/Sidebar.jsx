@@ -17,9 +17,9 @@ const Sidebar = () => {
   function handleLightMode() {
     setDarkMode(!darkmode);
     if (darkmode) {
-      darkmodeRef.current.style.transform = `translateY(-100px)`;
+      darkmodeRef.current.style.transform = `translateY(-50px)`;
     } else {
-      darkmodeRef.current.style.transform = `translateY(0px)`;
+      darkmodeRef.current.style.transform = `translateY(-0px)`;
     }
   }
 
