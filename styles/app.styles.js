@@ -85,6 +85,7 @@ body {
   position: relative;
   min-height: 100vh;
   background:  ${colors.dimBlue};
+
 }
 
 a {
@@ -117,7 +118,7 @@ h2 {
 }
 .hoverAnimation:hover {
   background: rgba(229, 229, 229, .3);
-  border-radius: 50%;
+  border-radius: 50px;
 }
 
 

@@ -1,8 +1,13 @@
 import React from 'react';
 
-const SidebarLink = (icon) => {
-  console.log(icon);
-  return <div>SidebarLink</div>;
+const SidebarLink = ({ text, icon }) => {
+  const Icon = icon;
+  return (
+    <div className='hoverAnimation'>
+      <Icon />
+      {text}
+    </div>
+  );
 };
 
 export default SidebarLink;
