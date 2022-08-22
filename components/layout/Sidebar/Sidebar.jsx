@@ -7,26 +7,29 @@ import { BsBell, BsBookmark, BsMoon, BsSun } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { TbListSearch } from 'react-icons/tb';
 import { CgMoreO } from 'react-icons/cg';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useAppContext } from '../../../context/context';
 
 const Sidebar = () => {
   const [sunIsUp, setSunIsUp] = useState(true);
   const { state, dispatch } = useAppContext();
-  // console.log('Sidebar:', state);
 
   const darkmodeRef = useRef();
 
-  function handleLightMode() {
-    setSunIsUp(!sunIsUp);
-    if (sunIsUp) {
-      darkmodeRef.current.style.transform = `translateY(-50px)`;
-      dispatch({ type: 'LIGHT' });
+  function handleColorMode() {
+    const localData = localStorage.getItem('mode')
+      ? JSON.parse(localStorage.getItem('mode'))
+      : null;
+    if (localData.background === '#000') {
+      dispatch({ type: 'LIGHT', payload: darkmodeRef });
     } else {
-      darkmodeRef.current.style.transform = `translateY(-0px)`;
-      dispatch({ type: 'DARK' });
+      dispatch({ type: 'DARK', payload: darkmodeRef });
     }
   }
+
+  useEffect(() => {
+    dispatch({ type: 'INITIAL', payload: darkmodeRef });
+  }, []);
 
   return (
     <StyledDiv className='sidebar'>
@@ -40,7 +43,7 @@ const Sidebar = () => {
         <SidebarLink text='Lists' icon={TbListSearch} />
         <SidebarLink text='Profile' icon={AiOutlineUser} />
         <SidebarLink text='More' icon={CgMoreO} />
-        <a onClick={handleLightMode} className='light-switch'>
+        <a onClick={handleColorMode} className='light-switch'>
           <div ref={darkmodeRef}>
             <BsSun className='link-icon sun-icon' />
             <BsMoon className='link-icon moon-icon' />
