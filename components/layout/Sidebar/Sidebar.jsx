@@ -9,6 +9,7 @@ import { TbListSearch } from 'react-icons/tb';
 import { CgMoreO } from 'react-icons/cg';
 import { useState, useRef, useEffect } from 'react';
 import { useAppContext } from '../../../context/context';
+import Link from 'next/link';
 
 const Sidebar = () => {
   const [sunIsUp, setSunIsUp] = useState(true);
@@ -33,7 +34,11 @@ const Sidebar = () => {
 
   return (
     <StyledDiv className='sidebar'>
-      <AiOutlineTwitter className='logo hoverAnimation' />
+      <Link href='/'>
+        <a>
+          <AiOutlineTwitter className='logo hoverAnimation' />
+        </a>
+      </Link>
       <ul className='list-of-links'>
         <SidebarLink text='Home' icon={RiHome7Line} />
         <SidebarLink text='Explore' icon={BiHash} />
@@ -44,7 +49,7 @@ const Sidebar = () => {
         <SidebarLink text='Profile' icon={AiOutlineUser} />
         <SidebarLink text='More' icon={CgMoreO} />
         <a onClick={handleColorMode} className='light-switch'>
-          <div ref={darkmodeRef}>
+          <div className='icon-container' ref={darkmodeRef}>
             <BsSun className='link-icon sun-icon' />
             <BsMoon className='link-icon moon-icon' />
           </div>

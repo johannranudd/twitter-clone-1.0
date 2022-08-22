@@ -12,6 +12,7 @@ export const StyledDiv = styled.div`
   .logo {
     margin: 0.25rem;
     font-size: 3.3rem;
+    cursor: pointer;
   }
   .list-of-links {
     a {
@@ -41,7 +42,7 @@ export const StyledDiv = styled.div`
       height: 50px;
       width: 50px;
       overflow: hidden;
-      div {
+      .icon-container {
         position: absolute;
         top: 0;
         display: flex;
@@ -52,7 +53,12 @@ export const StyledDiv = styled.div`
         width: 50px;
         transition: 0.4s;
         .link-icon {
-          margin: 0;
+          @media ${device.laptopM} {
+            margin: 0 0 0 0.4rem;
+          }
+          :hover {
+            color: lightblue;
+          }
         }
       }
     }
