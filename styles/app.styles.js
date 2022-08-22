@@ -116,7 +116,6 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: black;
 }
 
 button {
@@ -146,8 +145,6 @@ h2 {
   background: rgba(229, 229, 229, .3);
   border-radius: 50px;
 }
-
-
 
 /* .max-w-1300 {
   width: 100%;

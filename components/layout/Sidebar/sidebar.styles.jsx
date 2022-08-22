@@ -12,16 +12,16 @@ export const StyledDiv = styled.div`
   .logo {
     margin: 0.25rem;
     font-size: 3.3rem;
-    color: white;
-    @media ${device.laptopM} {
-      color: black;
-    }
   }
   .list-of-links {
     a {
       display: flex;
       align-items: center;
+      justify-content: center;
       margin: 0.25rem;
+      @media ${device.laptopM} {
+        justify-content: flex-start;
+      }
       .link-icon {
         font-size: 2rem;
         @media ${device.laptopM} {

@@ -8,18 +8,23 @@ import { FiMail } from 'react-icons/fi';
 import { TbListSearch } from 'react-icons/tb';
 import { CgMoreO } from 'react-icons/cg';
 import { useState, useRef } from 'react';
+import { useAppContext } from '../../../context/context';
 
 const Sidebar = () => {
-  const [darkmode, setDarkMode] = useState(false);
+  const [sunIsUp, setSunIsUp] = useState(true);
+  const { state, dispatch } = useAppContext();
+  // console.log('Sidebar:', state);
 
   const darkmodeRef = useRef();
 
   function handleLightMode() {
-    setDarkMode(!darkmode);
-    if (darkmode) {
+    setSunIsUp(!sunIsUp);
+    if (sunIsUp) {
       darkmodeRef.current.style.transform = `translateY(-50px)`;
+      dispatch({ type: 'LIGHT' });
     } else {
       darkmodeRef.current.style.transform = `translateY(-0px)`;
+      dispatch({ type: 'DARK' });
     }
   }
 
@@ -37,8 +42,8 @@ const Sidebar = () => {
         <SidebarLink text='More' icon={CgMoreO} />
         <a onClick={handleLightMode} className='light-switch'>
           <div ref={darkmodeRef}>
-            <BsMoon className='link-icon moon-icon' />
             <BsSun className='link-icon sun-icon' />
+            <BsMoon className='link-icon moon-icon' />
           </div>
         </a>
       </ul>

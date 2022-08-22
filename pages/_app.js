@@ -1,10 +1,13 @@
 import Layout from '../components/layout/layout';
+import { AppWrapper } from '../context/context';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppWrapper>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppWrapper>
   );
 }
 
