@@ -7,13 +7,24 @@ import { BsBell, BsBookmark, BsMoon, BsSun } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { TbListSearch } from 'react-icons/tb';
 import { CgMoreO } from 'react-icons/cg';
+import { GiFeather } from 'react-icons/gi';
 import { useState, useRef, useEffect } from 'react';
-import { useAppContext } from '../../../context/context';
+import { useAppContext } from '../../context/context';
 import Link from 'next/link';
 
 const Sidebar = () => {
   const { state, dispatch } = useAppContext();
   const darkmodeRef = useRef();
+
+  const [windowSize, setWindowSize] = useState(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', () => {
+        setWindowSize(window.innerWidth);
+      });
+    }
+  });
+
+  useEffect(() => {}, [windowSize]);
 
   function handleColorMode() {
     const localData = localStorage.getItem('mode')
@@ -53,6 +64,9 @@ const Sidebar = () => {
           </div>
         </a>
       </ul>
+      <button className='tweet-btn'>
+        <GiFeather />
+      </button>
     </StyledDiv>
   );
 };

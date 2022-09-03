@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { size, device } from '../../../styles/app.styles';
+import { colors, device } from '../../styles/app.styles';
 
 export const StyledDiv = styled.div`
   display: flex;
@@ -14,6 +14,7 @@ export const StyledDiv = styled.div`
     font-size: 3.3rem;
     cursor: pointer;
   }
+  /* list of links */
   .list-of-links {
     a {
       display: flex;
@@ -40,6 +41,7 @@ export const StyledDiv = styled.div`
     .active {
       font-weight: bold;
     }
+    /* light switch */
     .light-switch {
       position: relative;
       height: 50px;
@@ -64,6 +66,21 @@ export const StyledDiv = styled.div`
           }
         }
       }
+    }
+  }
+  /* tweet btn */
+  .tweet-btn {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    border: none;
+    background: ${colors.blue};
+    color: ${colors.white};
+    @media ${device.laptopM} {
+      width: 85%;
+      border-radius: 50px;
     }
   }
 `;
