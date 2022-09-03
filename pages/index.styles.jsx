@@ -5,47 +5,39 @@ export const StyledDiv = styled.div`
   display: flex;
   max-width: 700px;
   margin: auto;
+  padding: 0 2rem;
+  @media ${device.laptop} {
+    max-width: 1200px;
+  }
   .sidebar {
-    max-width: 150px;
-    width: 15%;
+    position: fixed;
     min-height: 100vh;
-    min-width: 70px;
+    min-width: 100px;
     border: 1px solid black;
+    @media ${device.laptopM} {
+      width: 250px;
+    }
   }
   .feed {
+    flex-grow: 1;
     width: 100%;
     min-height: 100vh;
     border: 1px solid green;
+    background: #def;
+    margin-left: 100px;
+    @media ${device.laptopM} {
+      margin-left: 250px;
+    }
   }
   .widgets {
     display: none;
+    @media ${device.laptop} {
+      display: block;
+      width: 600px;
+      background: #fed;
+    }
   }
 
   .modal {
-  }
-  @media ${device.laptop} {
-    max-width: 1100px;
-    .sidebar {
-    }
-    .feed {
-      /* width: 50%; */
-    }
-    .widgets {
-      width: 50%;
-      display: block;
-      border: 1px solid violet;
-    }
-  }
-
-  @media ${device.laptopM} {
-    max-width: 1280px;
-    .sidebar {
-      max-width: 100%;
-      width: 30%;
-    }
-    .feed {
-    }
-    .widgets {
-    }
   }
 `;
