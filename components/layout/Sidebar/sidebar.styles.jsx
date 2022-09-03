@@ -37,6 +37,9 @@ export const StyledDiv = styled.div`
         }
       }
     }
+    .active {
+      font-weight: bold;
+    }
     .light-switch {
       position: relative;
       height: 50px;

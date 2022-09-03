@@ -12,9 +12,7 @@ import { useAppContext } from '../../../context/context';
 import Link from 'next/link';
 
 const Sidebar = () => {
-  const [sunIsUp, setSunIsUp] = useState(true);
   const { state, dispatch } = useAppContext();
-
   const darkmodeRef = useRef();
 
   function handleColorMode() {
