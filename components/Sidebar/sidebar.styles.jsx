@@ -78,6 +78,9 @@ export const StyledDiv = styled.div`
     border: none;
     background: ${colors.blue};
     color: ${colors.white};
+    :hover {
+      background: ${colors.blue2};
+    }
     @media ${device.laptopM} {
       width: 85%;
       border-radius: 50px;

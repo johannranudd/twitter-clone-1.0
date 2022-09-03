@@ -11,20 +11,11 @@ import { GiFeather } from 'react-icons/gi';
 import { useState, useRef, useEffect } from 'react';
 import { useAppContext } from '../../context/context';
 import Link from 'next/link';
+import { size, device } from '../../styles/app.styles';
 
 const Sidebar = () => {
-  const { state, dispatch } = useAppContext();
+  const { state, dispatch, screenWidth } = useAppContext();
   const darkmodeRef = useRef();
-
-  const [windowSize, setWindowSize] = useState(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', () => {
-        setWindowSize(window.innerWidth);
-      });
-    }
-  });
-
-  useEffect(() => {}, [windowSize]);
 
   function handleColorMode() {
     const localData = localStorage.getItem('mode')
@@ -65,7 +56,7 @@ const Sidebar = () => {
         </a>
       </ul>
       <button className='tweet-btn'>
-        <GiFeather />
+        {screenWidth < size.laptopM ? <GiFeather /> : 'tweet'}
       </button>
     </StyledDiv>
   );
