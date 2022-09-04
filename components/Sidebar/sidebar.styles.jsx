@@ -16,6 +16,7 @@ export const StyledDiv = styled.div`
   }
   /* list of links */
   .list-of-links {
+    width: 100%;
     a {
       display: flex;
       align-items: center;
@@ -67,23 +68,26 @@ export const StyledDiv = styled.div`
         }
       }
     }
-  }
-  /* tweet btn */
-  .tweet-btn {
-    margin: auto;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    border: none;
-    background: ${colors.blue};
-    color: ${colors.white};
-    :hover {
-      background: ${colors.blue2};
+
+    /* tweet btn */
+    .tweet-btn {
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      border: none;
+      background: ${colors.blue};
+      color: ${colors.white};
+      :hover {
+        background: ${colors.blue2};
+      }
+      @media ${device.laptopM} {
+        width: 85%;
+        border-radius: 50px;
+      }
     }
-    @media ${device.laptopM} {
-      width: 85%;
-      border-radius: 50px;
-    }
   }
+
+  /* email widget */
 `;

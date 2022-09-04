@@ -54,10 +54,10 @@ const Sidebar = () => {
             <BsMoon className='link-icon moon-icon' />
           </div>
         </a>
+        <button className='tweet-btn'>
+          {screenWidth < size.laptopM ? <GiFeather /> : 'tweet'}
+        </button>
       </ul>
-      <button className='tweet-btn'>
-        {screenWidth < size.laptopM ? <GiFeather /> : 'tweet'}
-      </button>
     </StyledDiv>
   );
 };
