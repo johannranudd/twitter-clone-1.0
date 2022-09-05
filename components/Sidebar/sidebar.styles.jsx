@@ -5,89 +5,141 @@ export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
 
-  @media ${device.laptopM} {
-    align-items: flex-start;
-  }
-  .logo {
-    margin: 0.25rem;
-    font-size: 3.3rem;
-    cursor: pointer;
-  }
-  /* list of links */
-  .list-of-links {
+  .upper-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0.25rem;
+    @media ${device.laptopM} {
+      align-items: flex-start;
+    }
+    .logo {
+      font-size: 3.3rem;
+      cursor: pointer;
+    }
+    /* list of links */
+    .list-of-links {
       @media ${device.laptopM} {
-        justify-content: flex-start;
+        width: 100%;
       }
-      .link-icon {
-        font-size: 2rem;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.25rem 0;
+        /* padding: 5px 0; */
         @media ${device.laptopM} {
-          margin: 0 1rem 0 0.4rem;
+          justify-content: flex-start;
+        }
+        .link-icon {
+          font-size: 2rem;
+          @media ${device.laptopM} {
+            margin-right: 1rem;
+          }
+        }
+        .link-text {
+          display: none;
+          @media ${device.laptopM} {
+            display: inline;
+            font-size: 1.2rem;
+          }
         }
       }
-      .link-text {
+      .active {
+        font-weight: bold;
+      }
+      /* light switch */
+      .light-switch {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+        @media ${device.laptopM} {
+          padding-left: 5px;
+        }
+        .icon-container {
+          position: absolute;
+          top: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          height: 100px;
+          width: 50px;
+          transition: 0.4s;
+          .link-icon {
+            :hover {
+              color: lightblue;
+            }
+            @media ${device.laptopM} {
+              /* margin: 0 0 0 0.4rem; */
+            }
+          }
+        }
+      }
+
+      /* tweet btn */
+      .tweet-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        border: none;
+        background: ${colors.blue};
+        color: ${colors.white};
+        :hover {
+          background: ${colors.blue2};
+        }
+        @media ${device.laptopM} {
+          width: 100%;
+          border-radius: 50px;
+        }
+      }
+    } /* end of list */
+  }
+  /* email widget */
+  .lower-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media ${device.laptopM} {
+      width: 100%;
+    }
+    .email-widget {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-radius: 50px;
+      cursor: pointer;
+      .image-name-email {
+        display: flex;
+        align-items: center;
+        img {
+          border-radius: 50%;
+        }
+        .users-name-and-email {
+          display: none;
+          @media ${device.laptopM} {
+            display: inline;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+      .more-icon {
         display: none;
         @media ${device.laptopM} {
           display: inline;
-          font-size: 1.2rem;
         }
-      }
-    }
-    .active {
-      font-weight: bold;
-    }
-    /* light switch */
-    .light-switch {
-      position: relative;
-      height: 50px;
-      width: 50px;
-      overflow: hidden;
-      .icon-container {
-        position: absolute;
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100px;
-        width: 50px;
-        transition: 0.4s;
-        .link-icon {
-          @media ${device.laptopM} {
-            margin: 0 0 0 0.4rem;
-          }
-          :hover {
-            color: lightblue;
-          }
-        }
-      }
-    }
-
-    /* tweet btn */
-    .tweet-btn {
-      margin: auto;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      border: none;
-      background: ${colors.blue};
-      color: ${colors.white};
-      :hover {
-        background: ${colors.blue2};
-      }
-      @media ${device.laptopM} {
-        width: 85%;
-        border-radius: 50px;
       }
     }
   }
-
-  /* email widget */
 `;
