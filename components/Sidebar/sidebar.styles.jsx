@@ -9,28 +9,18 @@ export const StyledDiv = styled.div`
   padding: 0 10px;
 
   .upper-part {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    @media ${device.laptopM} {
-      align-items: flex-start;
-    }
     .logo {
       font-size: 3.3rem;
       cursor: pointer;
     }
     /* list of links */
     .list-of-links {
-      @media ${device.laptopM} {
-        width: 100%;
-      }
       a {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0.25rem 0;
-        /* padding: 5px 0; */
         @media ${device.laptopM} {
           justify-content: flex-start;
         }
@@ -74,9 +64,6 @@ export const StyledDiv = styled.div`
             :hover {
               color: lightblue;
             }
-            @media ${device.laptopM} {
-              /* margin: 0 0 0 0.4rem; */
-            }
           }
         }
       }
@@ -106,10 +93,6 @@ export const StyledDiv = styled.div`
   }
   /* email widget */
   .lower-part {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     @media ${device.laptopM} {
       width: 100%;
     }
@@ -117,7 +100,6 @@ export const StyledDiv = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
       border-radius: 50px;
       cursor: pointer;
       .image-name-email {

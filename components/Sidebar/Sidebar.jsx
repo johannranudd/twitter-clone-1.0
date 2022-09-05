@@ -37,12 +37,12 @@ const Sidebar = () => {
     <StyledDiv className='sidebar'>
       {/* upper */}
       <div className='upper-part'>
-        <Link href='/'>
-          <a>
-            <AiOutlineTwitter className='logo hoverAnimation' />
-          </a>
-        </Link>
         <ul className='list-of-links'>
+          <Link href='/'>
+            <a>
+              <AiOutlineTwitter className='logo hoverAnimation' />
+            </a>
+          </Link>
           <SidebarLink text='Home' icon={RiHome7Line} />
           <SidebarLink text='Explore' icon={BiHash} />
           <SidebarLink text='Notifications' icon={BsBell} />
