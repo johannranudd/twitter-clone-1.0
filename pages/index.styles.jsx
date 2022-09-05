@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { device } from '../styles/app.styles';
 
 export const StyledDiv = styled.div`
+  /* This stylesheet is only for the display of  */
   display: flex;
   max-width: 700px;
   margin: auto;
@@ -12,7 +13,7 @@ export const StyledDiv = styled.div`
   .sidebar {
     position: fixed;
     min-height: 100vh;
-    min-width: 100px;
+    width: 100px;
     border: 1px solid black;
     @media ${device.laptopM} {
       width: 250px;
